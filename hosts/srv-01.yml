@@ -1,0 +1,10 @@
+db_engine: mysql
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  user_cred_id: mysql-backup-creds   # ID de credencial en Jenkins (Username + Password)
+  all: true                          # true = todas las BDs; false = solo 'databases'
+  databases: []                      # ej. ["miapp","reportes"] si all=false
+  mysqldump_opts: "--single-transaction --routines --triggers --events --default-character-set=utf8mb4"
+
+backup_dir: /u02/backups/mysql
